@@ -20,6 +20,10 @@ public class Operation extends State {
         CurrState = fanning;
     }
 
+    public void activate(){
+        setCurrent_state(fanning);
+    }
+
     @Override
     public void setCurrent_state(State st) {
         CurrState = st;
