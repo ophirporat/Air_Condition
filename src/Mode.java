@@ -19,15 +19,18 @@ class Mode extends State {
         this.currState = st;
         st.entry();
     }
+    public void activate(){
+        if (R_temp < C_temp) {
+            setCurrent_state(this.heat);
+        }
+        else setCurrent_state(this.cool);
+    }
 
     public Mode(int c_temp, int r_temp) {
         this.cool = new Cool(this);
         this.heat = new Heat(this);
         C_temp = c_temp;
         R_temp = r_temp;
-        if (R_temp < C_temp) {
-            setCurrent_state(this.heat);
-        }
-        else setCurrent_state(this.cool);
+
     }
 }
