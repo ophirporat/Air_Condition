@@ -7,7 +7,19 @@ public class AirConditioner extends State{
     public On on;
     public State cur_state;
 
-    public void on(){}
+    public AirConditioner() {
+        this.C_temp = 25;
+        this.R_temp = 25;
+
+        this.wait = new Wait(this);
+        this.on = new On(this, this.C_temp, this.R_temp);
+        this.off = new Off(this);
+        this.cur_state = this.off;
+    }
+
+    public void on(){
+        wait.entry();
+    }
 
     public void off(){}
 
