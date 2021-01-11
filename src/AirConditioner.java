@@ -1,22 +1,36 @@
 public class AirConditioner extends State{
 
-    public int C_temp;
-    public int R_temp;
+//    public int C_temp;
+//    public int R_temp;
     public Off off;
     public Wait wait;
     public On on;
     public State cur_state;
 
-    public void on(){}
+    public AirConditioner() {
+//        this.C_temp = 25;
+//        this.R_temp = 25;
+        this.wait = new Wait(this);
+//        this.on = null;
+        this.on = new On(this, 25, 25);
+        this.off = new Off(this);
+        setCurrent_state(off);
+    }
+
+    public void on(){
+        wait.entry();
+        setCurrent_state(on);
+
+    }
 
     public void off(){}
 
     public void setC_temp(int temp){
-        C_temp = temp;
+//        C_temp = temp;
     }
 
     public void setR_temp(int temp){
-        R_temp = temp;
+//        R_temp = temp;
     }
 
     @Override
