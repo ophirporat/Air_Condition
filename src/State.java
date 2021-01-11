@@ -1,4 +1,5 @@
 public abstract class State {
+
     public void entry(){}
 
     public void exit(){
