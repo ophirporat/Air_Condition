@@ -12,7 +12,7 @@ public class Wait extends State{
     @Override
     public void entry(){
         System.out.println("WAITING 30 SECONDS");
-        context.on();
+
         }
 
 
