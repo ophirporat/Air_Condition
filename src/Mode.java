@@ -23,7 +23,7 @@ class Mode extends State {
     public void activate(){
         this.R_temp = on.getR_temp();
         this.C_temp = on.getC_temp();
-        if (R_temp < C_temp) {
+        if (R_temp < C_temp-5) {
             if (currState != heat){
                 setCurrent_state(this.heat);
             }
