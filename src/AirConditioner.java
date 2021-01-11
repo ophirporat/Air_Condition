@@ -25,7 +25,7 @@ public class AirConditioner extends State{
 
     public void setC_temp(int temp){
         C_temp = temp;
-        on.setR_temp(temp);
+        on.setC_temp(temp);
         System.out.println("set c_temp to" + temp);
     }
 
