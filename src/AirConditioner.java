@@ -1,10 +1,11 @@
-public class AirConditioner {
+public class AirConditioner extends State{
 
     public int C_temp;
     public int R_temp;
-    public State Off;
-    public State wait;
-    public State on;
+    public Off off;
+    public Wait wait;
+    public On on;
+    public State cur_state;
 
     public void on(){}
 
@@ -18,4 +19,14 @@ public class AirConditioner {
         R_temp = temp;
     }
 
+    @Override
+    public void entry() {
+
+    }
+
+    @Override
+    public void setCurrent_state(State st) {
+        cur_state = st;
+        st.entry();
+    }
 }

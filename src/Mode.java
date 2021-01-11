@@ -1,8 +1,8 @@
 class Mode extends State {
     public int C_temp;
     public int R_temp;
-    public State cool;
-    public State heat;
+    public Cool cool;
+    public Heat heat;
     public State currState ;
 
     @Override

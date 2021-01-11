@@ -1,7 +1,7 @@
 public class Off extends State{
-
+    AirConditioner context;
     public Off(AirConditioner airCondition){
-        AirConditioner context = airCondition;
+        context = airCondition;
     }
     @Override
     public void setCurrent_state(State st) {}

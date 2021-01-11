@@ -1,7 +1,8 @@
 public class Wait extends State{
-
+    AirConditioner context;
     public Wait(AirConditioner airConditioner){
-        AirConditioner context = airConditioner;
+
+        context = airConditioner;
     }
 
     @Override
@@ -11,7 +12,9 @@ public class Wait extends State{
     @Override
     public void entry(){
         System.out.println("WAITING 30 SECONDS");
+        context.on();
+        }
 
-    }
+
 
 }
