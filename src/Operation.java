@@ -2,7 +2,7 @@ public class Operation extends State {
     public int C_temp;
     public int R_temp;
     public State cooling;
-    public State fanning;
+    public Fanning fanning;
     public State heating;
     public On ONState;
     public State CurrState;
@@ -22,6 +22,16 @@ public class Operation extends State {
 
     public void activate(){
         setCurrent_state(fanning);
+        int newC_temp = ONState.getC_temp();
+        int newR_temp = ONState.getR_temp();
+        if (newC_temp != C_temp) {
+            fanning.setC_temp(newC_temp);
+        }
+        if (newR_temp != R_temp){
+            fanning.setR_temp(newR_temp);
+
+        }
+
     }
 
     @Override
