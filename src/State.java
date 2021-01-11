@@ -4,15 +4,7 @@ public abstract class State {
     public void exit(){
         System.out.print("Good Bye");
     }
+    public abstract void setCurrent_state(State st);
 
-    public void setC_temp(int C_temp) { }
-
-    public void setR_temp(int R_temp) { }
-
-    public void setCool(boolean cool) { }
-
-    public void ChangeState(boolean isCool) {
-
-    }
 
 }
