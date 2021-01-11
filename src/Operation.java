@@ -7,6 +7,9 @@ public class Operation extends State {
     public On ONState;
     public State CurrState;
 
+    @Override
+    public void entry() { }
+
     public Operation(On on){
         cooling = new Cooling(this);
         fanning = new Fanning(this);
