@@ -5,8 +5,7 @@ public class Main {
         AirConditioner ac = new AirConditioner();
         ac.on();
         ac.setR_temp(27);
-        ac.setC_temp(28);
-//        ac.setR_temp(35);
+        ac.setC_temp(33);
         ac.off();
     }
 }
