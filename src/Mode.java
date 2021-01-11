@@ -35,11 +35,12 @@ class Mode extends State {
         }
     }
 
-    public Mode(int c_temp, int r_temp) {
+    public Mode(int c_temp, int r_temp, On on) {
         this.cool = new Cool(this);
         this.heat = new Heat(this);
         C_temp = c_temp;
         R_temp = r_temp;
+        this.on = on;
 
     }
 }
