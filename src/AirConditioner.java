@@ -2,7 +2,7 @@ public class AirConditioner {
 
     public int C_temp;
     public int R_temp;
-    public State off;
+    public State Off;
     public State wait;
     public State on;
 
