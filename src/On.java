@@ -1,5 +1,5 @@
 public class On extends State {
-    State mode;
+    Mode mode;
     State Operation;
     State airConditioner;
 //    State currentState;
@@ -9,6 +9,7 @@ public class On extends State {
     @Override
     public void entry() {
         System.out.println("ON");
+        mode.activate();
     }
 
     public On(State airConditioner, int c_temp, int r_temp) {
