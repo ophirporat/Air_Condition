@@ -31,4 +31,24 @@ public class Fanning extends State {
 
     }
 
+    public void setC_temp(int c_temp) {
+        C_temp = c_temp;
+        if(C_temp + 2 < R_temp){
+            Operation.setCurrent_state(Operation.cooling);
+        }
+        if(C_temp - 2 > R_temp){
+            Operation.setCurrent_state(Operation.heating);
+        }
+    }
+
+    public void setR_temp(int r_temp) {
+        R_temp = r_temp;
+        if(C_temp + 2 < R_temp){
+            Operation.setCurrent_state(Operation.cooling);
+        }
+        if(C_temp - 2 > R_temp){
+            Operation.setCurrent_state(Operation.heating);
+        }
+    }
+
 }
