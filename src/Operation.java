@@ -4,10 +4,10 @@ public class Operation extends State {
     public State cooling;
     public State fanning;
     public State heating;
-    public ON ONState;
+    public On ONState;
     public State CurrState;
 
-    public Operation(ON on){
+    public Operation(On on){
         cooling = new Cooling(this);
         fanning = new Fanning(this);
         heating = new Heating(this);
