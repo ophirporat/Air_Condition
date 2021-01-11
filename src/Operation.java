@@ -22,15 +22,6 @@ public class Operation extends State {
 
     public void activate(){
         setCurrent_state(fanning);
-        int newC_temp = ONState.getC_temp();
-        int newR_temp = ONState.getR_temp();
-        if (newC_temp != C_temp) {
-            fanning.setC_temp(newC_temp);
-        }
-        if (newR_temp != R_temp){
-            fanning.setR_temp(newR_temp);
-
-        }
 
     }
 
@@ -39,7 +30,19 @@ public class Operation extends State {
         CurrState = st;
         st.entry();
     }
+    public void setTemp(){
+        int newC_temp = ONState.getC_temp();
+        int newR_temp = ONState.getR_temp();
+        if (newC_temp != C_temp) {
+            C_temp = newC_temp;
+            fanning.setC_temp(newC_temp);
+        }
+        if (newR_temp != R_temp){
+            R_temp = newR_temp;
+            fanning.setR_temp(newR_temp);
 
+        }
+    }
     public int getC_temp() {
         return C_temp;
     }

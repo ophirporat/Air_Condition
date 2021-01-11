@@ -14,11 +14,12 @@ public class On extends State {
     }
 
     public On(State airConditioner, int c_temp, int r_temp) {
+
+        C_temp = c_temp;
+        R_temp = r_temp;
         this.airConditioner = airConditioner;
         this.Operation = new Operation(this);
         this.mode = new Mode(c_temp, r_temp,this);
-        C_temp = c_temp;
-        R_temp = r_temp;
     }
 
     @Override
@@ -36,17 +37,22 @@ public class On extends State {
 
     public void setC_temp(int C_temp) {
         this.C_temp = C_temp;
+        State lastState = mode.currState;
         mode.activate();
-        Operation.activate();
+        if (mode.currState != lastState){
+            Operation.activate();
+        }
+        Operation.setTemp();
     }
 
     public void setR_temp(int R_temp) {
-
         this.R_temp = R_temp;
+        State lastState = mode.currState;
         mode.activate();
-        Operation.activate();
+        if (mode.currState != lastState){
+            Operation.activate();
+        }
+        Operation.setTemp();
     }
-
-
 
 }

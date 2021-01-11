@@ -21,17 +21,19 @@ public class AirConditioner extends State{
         setCurrent_state(on);
     }
 
-    public void off(){}
+    public void off(){
+        setCurrent_state(off);
+    }
 
     public void setC_temp(int temp){
-        System.out.println("set c_temp to" + temp);
+        System.out.println("set c_temp to " + temp);
         C_temp = temp;
         on.setC_temp(temp);
 
     }
 
     public void setR_temp(int temp){
-        System.out.println("set r_temp to" + temp);
+        System.out.println("set r_temp to " + temp);
         R_temp = temp;
         on.setR_temp(temp);
 
