@@ -4,6 +4,7 @@ class Mode extends State {
     public Cool cool;
     public Heat heat;
     public State currState ;
+    public On on;
 
     @Override
     public void entry() {
@@ -20,10 +21,18 @@ class Mode extends State {
         st.entry();
     }
     public void activate(){
+        this.R_temp = on.getR_temp();
+        this.C_temp = on.getC_temp();
         if (R_temp < C_temp) {
-            setCurrent_state(this.heat);
+            if (currState != heat){
+                setCurrent_state(this.heat);
+            }
         }
-        else setCurrent_state(this.cool);
+        else {
+            if (currState != cool) {
+                setCurrent_state(this.cool);
+            }
+        }
     }
 
     public Mode(int c_temp, int r_temp) {

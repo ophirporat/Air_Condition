@@ -36,10 +36,14 @@ public class On extends State {
 
     public void setC_temp(int C_temp) {
         this.C_temp = C_temp;
+        mode.activate();
+        Operation.activate();
     }
 
     public void setR_temp(int R_temp) {
         this.R_temp = R_temp;
+        mode.activate();
+        Operation.activate();
     }
 
 
