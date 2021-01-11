@@ -1,5 +1,5 @@
 public class On extends State {
-    State Mode;
+    State mode;
     State Operation;
     State airConditioner;
 //    State currentState;
@@ -14,6 +14,7 @@ public class On extends State {
     public On(State airConditioner, int c_temp, int r_temp) {
         this.airConditioner = airConditioner;
         this.Operation = new Operation(this);
+        this.mode = new Mode(c_temp, r_temp);
         C_temp = c_temp;
         R_temp = r_temp;
     }

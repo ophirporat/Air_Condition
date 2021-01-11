@@ -7,7 +7,6 @@ class Mode extends State {
 
     @Override
     public void entry() {
-        super.entry();
     }
 
     @Override
@@ -17,7 +16,8 @@ class Mode extends State {
 
     @Override
     public void setCurrent_state(State st) {
-
+        this.currState = st;
+        st.entry();
     }
 
     public Mode(int c_temp, int r_temp) {
@@ -25,9 +25,9 @@ class Mode extends State {
         this.heat = new Heat(this);
         C_temp = c_temp;
         R_temp = r_temp;
-        if (R_temp <C_temp) {
-           currState = this.heat;
+        if (R_temp < C_temp) {
+            setCurrent_state(this.heat);
         }
-        else currState = this.cool;
+        else setCurrent_state(this.cool);
     }
 }
