@@ -1,11 +1,33 @@
-abstract class Mode {
-    public double C_temp;
-    public double R_temp;
-    public abstract void operate();
-    public abstract void printOnScreen();
+class Mode extends State {
+    public int C_temp;
+    public int R_temp;
+    public State cool;
+    public State heat;
+    public State currState ;
 
-    public Mode(double c_temp, double r_temp) {
+    @Override
+    public void entry() {
+        super.entry();
+    }
+
+    @Override
+    public void exit() {
+        super.exit();
+    }
+
+    @Override
+    public void setCurrent_state(State st) {
+
+    }
+
+    public Mode(int c_temp, int r_temp) {
+        this.cool = new Cool(this);
+        this.heat = new Heat(this);
         C_temp = c_temp;
         R_temp = r_temp;
+        if (R_temp <C_temp) {
+           currState = this.heat;
+        }
+        else currState = this.cool;
     }
 }
